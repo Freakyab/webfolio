@@ -3,25 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ --bg-color : #282A36;
+ --bg-nav : #191A21;
+ --active-component-line : #9E5B8B;
+ --active-component-bg : #393b4d;
+ --sidebar-bg : #343746;
+ --bg-main : #21222C;
+}
+.myElement {
+  color: rgb(var(--label-r), var(--label-g), var(--label-b));
+  background-color: hsl(var(--label-h), var(--label-s), var(--label-l));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  background-color: var(--bg-color);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.navbar{
+  background-color: var(--bg-nav);
 }
+
+.sideNav{
+  background-color: var(--sidebar-bg);
+}
+
+.active-component-line{
+  background-color: var(--active-component-line);
+}
+.active-text{
+  color: var(--active-component-line);
+}
+.active_component_bg{
+  background-color: var(--active-component-bg);
+}
+
+.active_border_line{
+  border-left: 3px solid var(--active-component-line);
+}
+.active_border_line_top{
+  border-top: 3px solid var(--active-component-line);
+}
+
+.explorer{
+  background-color: var(--bg-main);
+}
+.explorer-text{
+  color: var(--bg-main);
+}
+
+.calc_height{
+  height: calc(100vh - 45px);
+}
+
+.body_color{
+  background-color: var(--bg-color);
+}
+
+
