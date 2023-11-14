@@ -74,9 +74,9 @@ body {
   font-family: "Londrina Solid", sans-serif;
 }
 
-/* @media (max-width: 940px) {
+@media (max-width: 1030px) {
   .hidden-tab{
     display: none;
   }
+}
 
-} */

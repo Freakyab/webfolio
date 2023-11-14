@@ -80,7 +80,7 @@ export default function Projects() {
   // ... (previous code)
 
   return (
-    <main className="body_color w-[100vw] calc_height text-white font-mono overflow-scroll overflow-x-hidden">
+    <main className="body_color pl-10 sm:pl-0 w-[100vw] calc_height text-white font-mono overflow-scroll overflow-x-hidden">
       <PageList />
       <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
         {repos.map((repo) => (

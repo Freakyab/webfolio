@@ -31,22 +31,22 @@ export default function Contact() {
   ];
 
   return (
-    <main className="body_color w-full  calc_height text-white">
+    <main className="body_color w-full pl-10 sm:pl-0 calc_height text-white">
       <PageList />
 
-      <div className="grid grid-cols-3 mt-5 ">
-        <pre className="p-4 col-span-2 " style={{ fontSize: "1.5rem" }}>
+      <div className="sm:grid grid-cols-3 text-xs sm:text-xl mt-5 ">
+        <pre className="p-4 col-span-2 ">
           <code>
-            <p className="text-center text-2xl font-bold text-gray-400 ">
+            <p className="sm:text-center sm:text-2xl font-bold text-gray-400 ">
               {"//"}Connect with me on social media
             </p>
             1| {`{`}
             {"\n"}
-            2| &nbsp;&nbsp;&nbsp;&nbsp;
+            2| &nbsp;&nbsp;&nbsp;
             <span className="active-text">"SocialMedia"</span>: {"["} {"\n"}
             {handlers.map((handler, index) => (
               <span key={index}>
-                {index + 3}| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {index + 3}| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>"{handler.name}"</span>:{" "}
                 <span className="active-text">
                   <Link
@@ -60,7 +60,7 @@ export default function Contact() {
                 {"\n"}
               </span>
             ))}
-            7| &nbsp;&nbsp;&nbsp;&nbsp;
+            7| &nbsp;&nbsp;&nbsp;
             {"]"}
             {"\n"}
             8| {`}`}

@@ -136,11 +136,11 @@ export const MenuItems = [
 const PageList = () => {
   const pathname = usePathname();
   return (
-    <div className="flex explorer">
+    <div className="flex explorer overflow-x-auto">
       {MenuItems.map((item, index) => (
         <div
           key={index}
-          className={` w-[180px] h-[48px] flex justify-center items-center px-5 
+          className={` w-[180px] h-[48px] flex justify-center items-center px-5 text-sm cursor-pointer
           
           ${item.sideNav ? "hidden" : ""}
           ${

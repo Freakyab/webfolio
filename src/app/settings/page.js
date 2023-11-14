@@ -57,10 +57,10 @@ export default function Settings() {
 
   return (
     <main
-      className={`body_color w-[100vw] h-full text-white font-mono overflow-x-hidden`}
+      className={`body_color w-[100vw] pl-10 sm:pl-0 h-full text-white font-mono overflow-x-hidden`}
       style={selectedTheme.colors}>
       <PageList />
-      <div className="flex ml-2 space-x-4 mt-4 justify-center items-center">
+      <div className="flex flex-col sm:flex-row ml-2 space-x-4 mt-4 justify-center items-center">
         {themes.map((theme) => (
           <div className="flex flex-col">
             <img src={theme.link} className="w-[400px] h-[400px] rounded-t-3xl"/>
