@@ -13,50 +13,31 @@ const themes = [
       "--sidebar-bg": "#343746",
       "--bg-main": "#21222c",
     },
-  },
-  {
-    name: "Monokai",
-    colors: {
-      "--bg-color": "#282a36",
-      "--bg-nav": "#191a21",
-      "--active-component-line": "#66d9ef",
-      "--active-component-bg": "#44475a",
-      "--sidebar-bg": "#343746",
-      "--bg-main": "#21222c",
-    },
+    link: "https://repository-images.githubusercontent.com/459748286/e3df890d-f648-42e3-96d2-8b8ef64f01d8",
   },
   {
     name: "GitHub Dark",
     colors: {
-      "--bg-color": "#1e2127",
-      "--bg-nav": "#1e2127",
+      "--bg-color": "#1e1e1e",
+      "--bg-nav": "#323233",
       "--active-component-line": "#0366d6",
       "--active-component-bg": "#2d333b",
-      "--sidebar-bg": "#1e2127",
-      "--bg-main": "#1e2127",
+      "--sidebar-bg": "#333333",
+      "--bg-main": "#252526",
     },
+    link: "https://img.crx4chrome.com/19/ec/59/odkdlljoangmamjilkamahebpkgpeacp-featured.webp",
   },
   {
     name: "Dark Blue",
     colors: {
-      "--bg-color": "#001f3f",
-      "--bg-nav": "#001f3f",
-      "--active-component-line": "#0074cc",
-      "--active-component-bg": "#003366",
-      "--sidebar-bg": "#001f3f",
-      "--bg-main": "#001f3f",
+      "--bg-color": "#030c1b",
+      "--bg-nav": "#000815",
+      "--active-component-line": "#0163e2",
+      "--active-component-bg": "#000810",
+      "--sidebar-bg": "#000815",
+      "--bg-main": "#030000",
     },
-  },
-  {
-    name: "Dark Green",
-    colors: {
-      "--bg-color": "#004d00",
-      "--bg-nav": "#004d00",
-      "--active-component-line": "#00cc44",
-      "--active-component-bg": "#006600",
-      "--sidebar-bg": "#004d00",
-      "--bg-main": "#004d00",
-    },
+    link: "https://cdn.dribbble.com/users/6569/screenshots/16169741/media/851c7266882dcfcf51a7370fae1d5af1.png?resize=400x0",
   },
 ];
 
@@ -75,19 +56,25 @@ export default function Settings() {
   };
 
   return (
-    <main className={`body_color w-[100vw] calc_height text-white font-mono overflow-scroll overflow-x-hidden`} style={selectedTheme.colors}>
+    <main
+      className={`body_color w-[100vw] h-full text-white font-mono overflow-x-hidden`}
+      style={selectedTheme.colors}>
       <PageList />
-      <div className="flex space-x-4 mt-4">
+      <div className="flex ml-2 space-x-4 mt-4 justify-center items-center">
         {themes.map((theme) => (
-          <button
-            key={theme.name}
-            onClick={() => handleThemeChange(theme)}
-            className={`py-2 px-4 rounded focus:outline-none ${
-              selectedTheme.name === theme.name ? "bg-gray-700" : "bg-gray-500"
-            }`}
-          >
-            {theme.name}
-          </button>
+          <div className="flex flex-col">
+            <img src={theme.link} className="w-[400px] h-[400px] rounded-t-3xl"/>
+            <button
+              key={theme.name}
+              onClick={() => handleThemeChange(theme)}
+              className={`py-2 px-4 rounded focus:outline-none transition duration-300 ${
+                selectedTheme.name === theme.name
+                  ? "bg-gray-800"
+                  : "bg-gray-600 hover:bg-gray-700"
+              }`}>
+              {theme.name}
+            </button>
+          </div>
         ))}
       </div>
     </main>

@@ -3,10 +3,11 @@ import { usePathname } from "next/navigation";
 import Button from "../button";
 
 const ExploreIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 0 21 24"
-  width={35}
-      height={35}
-  >
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="1 0 21 24"
+    width={25}
+    height={25}>
     <path
       d="M17.5 0h-9L7 1.5V6H2.5L1 7.5v15.07L2.5 24h12.07L16 22.57V18h4.7l1.3-1.43V4.5L17.5 0zm0 2.12l2.38 2.38H17.5V2.12zm-3 20.38h-12v-15H7v9.07L8.5 18h6v4.5zm6-6h-12v-15H16V6h4.5v10.5z"
       fill="#fff"
@@ -19,24 +20,20 @@ const SettingsIcon = () => (
     viewBox="0 0 512 512"
     fill="rgb(255, 255, 255)"
     color="white"
-    width={35}
-    height={35}
-  >
+    width={25}
+    height={25}>
     <path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53 165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06 79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82 22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0 01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0 01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58 0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0 01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0 0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51 9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14 4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0 011.64 22.66z" />
   </svg>
 );
 
 const GitIcon = () => (
-  <svg viewBox="0 0 512 512" color="white"
-  width={35}
-      height={35}
-  >
+  <svg viewBox="0 0 512 512" color="white" width={25} height={25}>
     <path
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={32}
+      strokeWidth={20}
       d="M304 160l-64-64 64-64M207 352l64 64-64 64"
     />
     <path
@@ -44,7 +41,7 @@ const GitIcon = () => (
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={32}
+      strokeWidth={20}
       d="M160 96 A48 48 0 0 1 112 144 A48 48 0 0 1 64 96 A48 48 0 0 1 160 96 z"
     />
     <path
@@ -52,7 +49,7 @@ const GitIcon = () => (
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={32}
+      strokeWidth={20}
       d="M448 416 A48 48 0 0 1 400 464 A48 48 0 0 1 352 416 A48 48 0 0 1 448 416 z"
     />
     <path
@@ -60,9 +57,25 @@ const GitIcon = () => (
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={32}
+      strokeWidth={20}
       d="M256 96h84a60 60 0 0160 60v212M255 416h-84a60 60 0 01-60-60V144"
     />
+  </svg>
+);
+const ContactIcon = () => (
+  <svg viewBox="0 0 24 24" fill="rgb(255, 255, 255)" width={25} height={25}>
+    <path d="M16 2H8C4.691 2 2 4.691 2 8v12a1 1 0 001 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z" />
+  </svg>
+);
+
+const ProjectIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-3 0 24 24"
+    fill="rgb(255, 255, 255)"
+    width={30}
+    height={30}>
+    <path d="M10.478 1.647a.5.5 0 10-.956-.294l-4 13a.5.5 0 00.956.294l4-13zM4.854 4.146a.5.5 0 010 .708L1.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm6.292 0a.5.5 0 000 .708L14.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z" />
   </svg>
 );
 
@@ -86,29 +99,6 @@ const JsIcon = () => (
   <svg viewBox="0 0 24 24" fill="rgb(255, 202, 40)" height="1em" width="1em">
     <path d="M4.698 3.419l2.057 23.073 9.231 2.563 9.256-2.566L27.301 3.42H4.697zm8.528 5.975l-.409 4.441 9.671.001-.069.76-.665 7.45-.042.478-5.804 1.609-5.796-1.609-.396-4.443h2.84l.202 2.257 3.154.85 3.156-.852.328-3.67-9.671-.001.069-.76.665-7.45.209-2.086h11.287l.131 1.598.403 4.453h-2.841l-.262-2.922-2.889-.174h-.515V9.32l-2.755.074z" />
   </svg>
-);
-
-const ProjectIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="-3 0 24 24"
-    fill="rgb(255, 255, 255)"
-    width={35}
-      height={35}
-    >
-    <path d="M10.478 1.647a.5.5 0 10-.956-.294l-4 13a.5.5 0 00.956.294l4-13zM4.854 4.146a.5.5 0 010 .708L1.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm6.292 0a.5.5 0 000 .708L14.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z" />
-  </svg>
-);
-
-const ContactIcon = () => (
-  <svg
-  viewBox="0 0 24 24"
-  fill="rgb(255, 255, 255)"
-  width={35}
-      height={35}
->
-  <path d="M16 2H8C4.691 2 2 4.691 2 8v12a1 1 0 001 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z" />
-</svg>
 );
 
 export const MenuItems = [
@@ -137,25 +127,26 @@ export const MenuItems = [
     MainIcon: <JsIcon />,
   },
   {
-    title : "settings",
-    icon : <SettingsIcon />,
-    link : "/settings",
-    sideNav : true
-  }
+    title: "settings",
+    icon: <SettingsIcon />,
+    link: "/settings",
+    sideNav: true,
+  },
 ];
 const PageList = () => {
   const pathname = usePathname();
   return (
-    <div className="flex">
+    <div className="flex explorer">
       {MenuItems.map((item, index) => (
         <div
           key={index}
-          className={` w-[200px] h-[48px] flex justify-center items-center px-5 
+          className={` w-[180px] h-[48px] flex justify-center items-center px-5 
+          
           ${item.sideNav ? "hidden" : ""}
           ${
             pathname === item.link
               ? "active_border_line_top body_color"
-              : "explorer border-black"
+              : " border-black border"
           }`}>
           <Button pathname={pathname} item={item} stroke={false} />
         </div>

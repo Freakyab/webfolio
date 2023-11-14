@@ -8,7 +8,7 @@ const Button = ({ pathname, item, key, stroke }) => {
           key={item.title}
           className={`flex items-center gap-2 p-2 
         ${item.sideNav ? "hidden" : ""}
-        ${pathname === item.link ? `${stroke ? "border body_color " : ""}` : ""}
+        ${pathname === item.link ? `${stroke ? " border-l-[3px] body_color " : ""}` : ""}
         `}>
           {item.MainIcon}
           {item.title}

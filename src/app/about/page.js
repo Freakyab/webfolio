@@ -1,18 +1,24 @@
 "use client";
 import PageList from "../components/pagesList";
+import Link from "next/link";
 
 export default function About() {
   return (
     <main className="body_color w-[100vw] calc_height text-white font-mono overflow-scroll overflow-x-hidden">
       <PageList />
-      <span className="mt-[100px] text-blue-800 font-light py-2 ">
+    <Link
+      href="https://github.com/freakyab"
+      
+    >
+      <span className=" active-text font-light py-5 px-2 ">
         <span className="text-white text-sm">Freakyab / </span>
-        <span className="text-white font-bold text-sm">Readme </span>
-        .md
+        <span className="text-white font-bold text-sm underline">Readme</span>
+         .md
         <span className="text-white"> in</span>
         <span className="font-bold text-sm"> main</span>
       </span>
-      <div className="p-3 mt-2 shadow-xl border-2 border-black">
+    </Link>
+      <div className="p-3 mt-2 shadow-xl border mb-5 border-black">
         <p className="text-3xl">## About Me</p>
         <p className="mt-2 mb-2 text-sm">
           Hello! 👋 I'm a third-year computer engineering student at St. Vincent

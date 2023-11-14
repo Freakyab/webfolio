@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="text-white flex w-screen h-[45px]">
+      <div className="text-white flex w-screen h-[45px] items-center">
         <img
           src="/assets/logo.jpeg"
           alt="Logo"
@@ -15,6 +15,9 @@ const Navbar = () => {
           <li>Run</li>
           <li>Go</li>
         </ul>
+        <div className="ml-auto mr-auto  shadow-lg">
+          <p className="text-white hidden-tab bg-gray-700 px-10 rounded py-1 w-96 text-center text-xs font-light">Freakyab-webfolio</p>
+        </div>
       </div>
     </div>
   );

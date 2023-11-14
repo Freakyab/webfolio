@@ -1,62 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&family=Londrina+Solid&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
- --bg-color : #282A36;
- --bg-nav : #191A21;
- --active-component-line : #9E5B8B;
- --active-component-bg : #393b4d;
- --sidebar-bg : #343746;
- --bg-main : #21222C;
-}
-.myElement {
-  color: rgb(var(--label-r), var(--label-g), var(--label-b));
-  background-color: hsl(var(--label-h), var(--label-s), var(--label-l));
+  --bg-color: #282a36;
+  --bg-nav: #191a21;
+  --active-component-line: #9e5b8b;
+  --active-component-bg: #393b4d;
+  --sidebar-bg: #343746;
+  --bg-main: #21222c;
 }
 
-body{
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: var(--bg-color);
 }
 
-.navbar{
+.navbar {
   background-color: var(--bg-nav);
 }
 
-.sideNav{
+.sideNav {
   background-color: var(--sidebar-bg);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-.active-component-line{
+.active-component-line {
   background-color: var(--active-component-line);
 }
-.active-text{
+.active-text {
   color: var(--active-component-line);
 }
-.active_component_bg{
+.active_component_bg {
   background-color: var(--active-component-bg);
 }
 
-.active_border_line{
+.active_border_line {
   border-left: 3px solid var(--active-component-line);
 }
-.active_border_line_top{
+.active_border_line_top {
   border-top: 3px solid var(--active-component-line);
 }
 
-.explorer{
+.explorer {
   background-color: var(--bg-main);
 }
-.explorer-text{
+.explorer-text {
   color: var(--bg-main);
 }
-
-.calc_height{
+.sidebar-text {
+  color: var(--sidebar-bg);
+}
+.nav-text {
+  color: var(--bg-nav);
+}
+.calc_height {
   height: calc(100vh - 45px);
 }
 
-.body_color{
+.body_color {
   background-color: var(--bg-color);
 }
 
+.outLine {
+  /* font-family: 'Bungee Outline', sans-serif; */
+  font-family: "Londrina Outline", sans-serif;
+}
 
+.solidText {
+  font-family: "Londrina Solid", sans-serif;
+}
+
+/* @media (max-width: 940px) {
+  .hidden-tab{
+    display: none;
+  }
+
+} */
