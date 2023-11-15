@@ -21,6 +21,7 @@ export default function Contact() {
       }
       const { name, email, message } = form;
       const res = await fetch("https://freaky-api.vercel.app/message/add", {
+      // const res = await fetch("http://localhost:5000/message/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
