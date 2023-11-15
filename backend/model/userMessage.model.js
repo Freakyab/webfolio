@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const client = require("../config/connect");
+const client = require("../config/connect.js");
 
 const userMessageSchema = new mongoose.Schema(
   {
