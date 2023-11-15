@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const UserMessage = require("../models/userMessage.model");
+const UserMessage = require("../model/userMessage.model");
 const nodeMailer = require("nodemailer");
 
 const transporter = nodeMailer.createTransport({

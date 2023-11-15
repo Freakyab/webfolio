@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/message', require('./controllers/message.controller') );
+app.use('/message', require('./controller/message.controller') );
 
 app.listen(PORT, async () => {
   console.log(`Listening on the port ${PORT}`);
