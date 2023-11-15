@@ -20,7 +20,7 @@ export default function Contact() {
         return;
       }
       const { name, email, message } = form;
-      const res = await fetch("http://localhost:5000/message/add", {
+      const res = await fetch("https://webfolio-backend-beta.vercel.app/message/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
