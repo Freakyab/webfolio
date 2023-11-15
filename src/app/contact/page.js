@@ -1,7 +1,49 @@
+"use client";
+import React, { useState } from "react";
 import PageList from "../components/pagesList";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 
 export default function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      if(!form.name || !form.email || !form.message){
+        toast.error("Please fill all the fields");
+        return;
+      }
+      const { name, email, message } = form;
+      const res = await fetch("http://localhost:5000/message/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+    const data = await res.json();
+    if(data.isSuccess){
+      toast.success(data.message);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }else{
+      toast.error(data.message);
+    }
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+
   const handlers = [
     {
       name: "LinkedIn",
@@ -27,7 +69,7 @@ export default function Contact() {
       name: "Github",
       link: "https://github.com/Freakyab",
       title: "Freakyab",
-    }
+    },
   ];
 
   return (
@@ -77,8 +119,10 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
-                  className="w-full p-2 text-black rounded-md explorer"
+                  value={form.name}
+                  className="w-full p-2  rounded-md explorer"
                   placeholder="Your Name"
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
               <div className="mb-4">
@@ -88,8 +132,10 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full p-2 text-black rounded-md explorer"
+                  value={form.email}
+                  className="w-full p-2  rounded-md explorer"
                   placeholder="Your Email"
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
               </div>
               <div className="mb-4">
@@ -98,16 +144,23 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="review"
-                  className="w-full h-32 p-2 text-black rounded-md explorer"
-                  placeholder="Write your review or suggestion here..."></textarea>
+                  value = {form.message}
+                  className="w-full h-32 p-2  text-base rounded-md explorer"
+                  placeholder="Write your review or suggestion here..."
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }></textarea>
               </div>
-              <button className="w-full p-2 text-white bg-black rounded-md ">
+              <button
+                className="w-full p-2 text-white bg-black rounded-md "
+                onClick={handleSubmit}>
                 Send
               </button>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </main>
   );
 }
