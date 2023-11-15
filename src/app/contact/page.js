@@ -19,6 +19,7 @@ export default function Contact() {
         toast.error("Please fill all the fields");
         return;
       }
+      toast.info("Sending message...");
       const { name, email, message } = form;
       const res = await fetch("https://freaky-api.vercel.app/message/add", {
       // const res = await fetch("http://localhost:5000/message/add", {
@@ -28,7 +29,6 @@ export default function Contact() {
         },
         body: JSON.stringify({ name, email, message }),
       });
-      console.log(res);
       const data = await res.json();
       if (data.isSuccess) {
         toast.success("Message sent successfully");
