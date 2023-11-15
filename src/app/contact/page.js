@@ -20,13 +20,14 @@ export default function Contact() {
         return;
       }
       const { name, email, message } = form;
-      const res = await fetch("https://webfolio-backend-beta.vercel.app/message/add", {
+      const res = await fetch("http://localhost:5000/message/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email, message }),
     });
+    console.log(res)
     const data = await res.json();
     if(data.isSuccess){
       toast.success(data.message);
