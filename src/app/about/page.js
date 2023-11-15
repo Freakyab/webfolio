@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <main className="body_color pl-12 sm:pl-0  w-[100vw] calc_height text-white font-mono ">
+    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-x-auto calc_height text-white font-mono ">
       <PageList />
     <Link
       href="https://github.com/freakyab"

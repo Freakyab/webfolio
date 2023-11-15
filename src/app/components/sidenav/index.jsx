@@ -56,7 +56,7 @@ const SideNav = () => {
               </svg>
             </span>
             <span
-            
+            className="cursor-pointer"
             >PORTFOLIO</span>
           </div>
           {dropDown ? (
