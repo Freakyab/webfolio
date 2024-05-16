@@ -1,7 +1,7 @@
 const Navbar = () => {
     return (
       <div className="navbar">
-        <div className="text-white flex w-screen h-[45px] items-center">
+        <div className="text-white flex w-full h-[45px] items-center">
           <img
             src="/assets/logo.jpeg"
             alt="Logo"
@@ -20,6 +20,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
     );
   };
   

@@ -1,33 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&family=Londrina+Solid&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --bg-color: #282a36;
+  --bg-nav: #191a21;
+  --active-component-line: #9e5b8b;
+  --active-component-bg: #393b4d;
+  --sidebar-bg: #343746;
+  --bg-main: #21222c;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --label-r: 215;
+  --label-g: 58;
+  --label-b: 74;
+  --label-h: 353;
+  --label-s: 66;
+  --label-l: 53;
+
+  --lightness-threshold: 0.6;
+  --background-alpha: 0.18;
+  --border-alpha: 0.3;
+  --perceived-lightness: calc(
+    (
+        (var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) +
+          (var(--label-b) * 0.0722)
+      ) / 255
+  );
+  --lightness-switch: max(
+    0,
+    min(
+      calc((1 / (var(--lightness-threshold) - var(--perceived-lightness)))),
+      1
+    )
+  );
+  --lighten-by: calc(
+    ((var(--lightness-threshold) - var(--perceived-lightness)) * 100) *
+      var(--lightness-switch)
+  );
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.navbar {
+  background-color: var(--bg-nav);
+}
+
+.sideNav {
+  background-color: var(--sidebar-bg);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.active-component-line {
+  background-color: var(--active-component-line);
+}
+.active-text {
+  color: var(--active-component-line);
+}
+.active_component_bg {
+  background-color: var(--active-component-bg);
+}
+
+.active_border_line {
+  border-left: 3px solid var(--active-component-line);
+}
+.active_border_line_top {
+  border-top: 3px solid var(--active-component-line);
+}
+
+.explorer {
+  background-color: var(--bg-main);
+}
+.explorer-text {
+  color: var(--bg-main);
+}
+.sidebar-text {
+  color: var(--sidebar-bg);
+}
+.nav-text {
+  color: var(--bg-nav);
+}
+.calc_height {
+  height: calc(100vh - 45px);
+}
+
+.body_color {
+  background-color: var(--bg-color);
+}
+
+.outLine {
+  /* font-family: 'Bungee Outline', sans-serif; */
+  font-family: "Londrina Outline", sans-serif;
+}
+
+.solidText {
+  font-family: "Londrina Solid", sans-serif;
+}
+
+.button {
+  border-radius: 10px; 
+  margin-bottom: 5px;
+  color: hsl(
+    var(--label-h),
+    calc(var(--label-s) * 1%),
+    calc((var(--label-l) + var(--lighten-by)) * 1%)
+  );
+  background: rgba(
+    var(--label-r),
+    var(--label-g),
+    var(--label-b),
+    var(--background-alpha)
+  );
+ border : 1px solid rgba(
+    var(--label-r),
+    var(--label-g),
+    var(--label-b),
+    var(--border-alpha)
+  );
+}
+
+@media (max-width: 1030px) {
+  .hidden-tab {
+    display: none;
   }
+}
+
+.nav-min-height {
+  height: calc(100vh - 45px);
 }
