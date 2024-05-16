@@ -29,15 +29,7 @@ export default function About() {
     const html = marked(markdown);
     return { __html: html };
   };
-
-  // return (
-  //   <div className="w-full nav-min-height text-white overflow-auto p-3">
-  //     <div
-  //       className="markdown-body p-3 shadow-xl rounded-lg"
-  //       dangerouslySetInnerHTML={createMarkup(projectReadme)}
-  //     />
-  //    </div>
-  // );
+  
   return (
     <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-x-auto calc_height text-white font-mono">
       <PageList />
