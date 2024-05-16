@@ -29,11 +29,11 @@ export default function About() {
     const html = marked(markdown);
     return { __html: html };
   };
-  
+
   return (
-    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-x-auto calc_height text-white font-mono">
+    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-hidden calc_height text-white font-mono">
       <PageList />
-      <div className="p-3">
+      <div className="p-3 overflow-auto nav-min-height pb-24">
         <div
           className="markdown-body p-3 shadow-xl rounded-lg"
           dangerouslySetInnerHTML={createMarkup(projectReadme)}

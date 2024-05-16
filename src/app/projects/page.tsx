@@ -47,7 +47,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-x-auto calc_height text-white font-mono ">
+    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-hidden calc_height text-white font-mono ">
       <PageList />
       <div className="w-full nav-min-height pb-6 overflow-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 m-3">
@@ -83,7 +83,7 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="relative pt-2">
-                    <p className="text-sm text-gray-300 mb-4 h-72 lg:h-56 overflow-auto">
+                    <p className="text-sm text-gray-300 mb-4 h-72 overflow-auto">
                       {project.description}
                     </p>
                     <div className=" absolute bottom-1 flex flex-col justify-between items-start">
