@@ -47,15 +47,15 @@ export default function Projects() {
   }, []);
 
   return (
-    <main className="body_color pl-12 sm:pl-0  w-[100vw] overflow-hidden calc_height text-white font-mono ">
+    <main className="body_color pl-12 sm:pl-0 w-screen h-[calc(100vh-5rem)] overflow-hidden text-white font-mono ">
       <PageList />
-      <div className="w-full nav-min-height pb-6 overflow-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 m-3">
+      <div className="w-full p-6 overflow-auto h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 m-3 ">
           {projects.length > 0 ? (
             projects.map((project) => (
               <div
                 key={project.id}
-                className="navbar rounded-lg shadow-lg hover:shadow-2xl overflow-hidden text-white w-[250px] lg:w-[300px]">
+                className="navbar rounded-lg shadow-lg hover:shadow-2xl overflow-hidden text-white w-[250px] h-fit lg:w-[300px]">
                 <div className="relative">
                   <img
                     src={project.avatar_url}
@@ -75,7 +75,7 @@ export default function Projects() {
                       title={project.name}>
                       {project.name}
                     </h2>
-                    <div className="relative inline-flex  group">
+                    <div className="relative inline-flex group">
                       <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
                       <span className="relative inline-flex items-center justify-center p-2 text-xs  text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
                         {project.language}
@@ -83,10 +83,10 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="relative pt-2">
-                    <p className="text-sm text-gray-300 mb-4 h-72 overflow-auto">
+                    <p className="text-sm text-gray-300 mb-4 h-fit overflow-auto">
                       {project.description}
                     </p>
-                    <div className=" absolute bottom-1 flex flex-col justify-between items-start">
+                    <div className=" flex flex-col justify-between items-start">
                       <Link
                         href={project.url}
                         target="_blank"

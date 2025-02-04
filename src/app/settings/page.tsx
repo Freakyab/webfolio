@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageList from "../components/pageList";
+import { applyTheme } from "../components/sideNav";
 
-const themes: themeProps[] = [
+export const themes: themeProps[] = [
   {
     name: "Dracula",
     colors: {
@@ -42,13 +43,9 @@ const themes: themeProps[] = [
 ];
 
 export default function Settings() {
-  const [selectedTheme, setSelectedTheme] = useState(themes[0]);
+  const [selectedTheme, setSelectedTheme] = useState(themes[1]);
 
-  const applyTheme = (theme : themeProps) => {
-    Object.entries(theme.colors).forEach(([property, value]) => {
-      document.documentElement.style.setProperty(property, value);
-    });
-  };
+
 
   const handleThemeChange = (theme : themeProps) => {
     setSelectedTheme(theme);

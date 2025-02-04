@@ -1,18 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MenuItems } from "./pageList";
 import Button from "./button";
-import Link from "next/link";
+// import Link from "next/link";
+import { themes } from "../settings/page";
+import { useRouter } from "nextjs-toploader/app";
+
+export const applyTheme = (theme: themeProps) => {
+  Object.entries(theme.colors).forEach(([property, value]) => {
+    document.documentElement.style.setProperty(property, value);
+  });
+};
 
 const SideNav = () => {
   const [dropDown, setDropDown] = useState(true);
   const pathname = usePathname();
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   applyTheme(themes[2]);
+  // }, []);
 
   return (
-    <>
+    <React.Fragment>
       <div className="sideNav w-[50px] fixed calc_height">
-        {MenuItems.map((item : itemProps, index : number) => (
+        {MenuItems.map((item: itemProps, index: number) => (
           <div
             key={index}
             className={`flex flex-col items-center pt-[18px] h-[60px]
@@ -21,15 +34,14 @@ const SideNav = () => {
               pathname === item.link
                 ? "active_border_line_top active_component_bg"
                 : "transition duration-500 ease-in-out"
-            }`
-            
-            }>
-            <Link href={item.link}>
-              <div className="w-[33px] h-[33px]">{item.icon}</div>
-            </Link>
+            }`}>
+            <div
+              className="w-[33px] h-[33px]"
+              onClick={() => router.push(item.link)}>
+              {item.icon}
+            </div>
           </div>
         ))}
-        
       </div>
       <div className="explorer hidden-tab w-[330px] calc_height ">
         <div className="pl-[50px]">
@@ -55,20 +67,23 @@ const SideNav = () => {
                 />
               </svg>
             </span>
-            <span
-            className="cursor-pointer"
-            >PORTFOLIO</span>
+            <span className="cursor-pointer">PORTFOLIO</span>
           </div>
           {dropDown ? (
             <div className="w-full relative flex flex-col top-6 py-1 text-white font-light text-sm ">
-              {MenuItems.map((item : itemProps , index : number) => (
-                <Button pathname={pathname} item={item} key={index} stroke={true}/>
+              {MenuItems.map((item: itemProps, index: number) => (
+                <Button
+                  pathname={pathname}
+                  item={item}
+                  key={index}
+                  stroke={true}
+                />
               ))}
             </div>
           ) : null}
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

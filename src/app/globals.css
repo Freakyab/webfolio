@@ -4,40 +4,20 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #282a36;
+  /* --bg-color: #282a36;
   --bg-nav: #191a21;
   --active-component-line: #9e5b8b;
   --active-component-bg: #393b4d;
   --sidebar-bg: #343746;
-  --bg-main: #21222c;
+  --bg-main: #21222c; */
 
-  --label-r: 215;
-  --label-g: 58;
-  --label-b: 74;
-  --label-h: 353;
-  --label-s: 66;
-  --label-l: 53;
+  --bg-color: #030c1b;
+  --bg-nav:#000815;
+  --active-component-line: #0163e2;
+  --active-component-bg: #000810;
+  --sidebar-bg: #000815;
+  --bg-main: #030000;
 
-  --lightness-threshold: 0.6;
-  --background-alpha: 0.18;
-  --border-alpha: 0.3;
-  --perceived-lightness: calc(
-    (
-        (var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) +
-          (var(--label-b) * 0.0722)
-      ) / 255
-  );
-  --lightness-switch: max(
-    0,
-    min(
-      calc((1 / (var(--lightness-threshold) - var(--perceived-lightness)))),
-      1
-    )
-  );
-  --lighten-by: calc(
-    ((var(--lightness-threshold) - var(--perceived-lightness)) * 100) *
-      var(--lightness-switch)
-  );
 }
 
 body {
