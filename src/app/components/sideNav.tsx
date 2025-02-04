@@ -4,23 +4,14 @@ import { usePathname } from "next/navigation";
 import { MenuItems } from "./pageList";
 import Button from "./button";
 // import Link from "next/link";
-import { themes } from "../settings/page";
+
 import { useRouter } from "nextjs-toploader/app";
 
-export const applyTheme = (theme: themeProps) => {
-  Object.entries(theme.colors).forEach(([property, value]) => {
-    document.documentElement.style.setProperty(property, value);
-  });
-};
 
 const SideNav = () => {
   const [dropDown, setDropDown] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
-
-  // useEffect(() => {
-  //   applyTheme(themes[2]);
-  // }, []);
 
   return (
     <React.Fragment>
